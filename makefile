@@ -1,6 +1,6 @@
 PROJECT = libftpp
 CC = c++
-FLAGS = -Wall -Wextra -Werror -std=c++23
+FLAGS = -Wall -Wextra -Werror -std=c++23 -O3
 SRCDIR = src
 INCDIR = inc
 OBJDIR = obj
@@ -13,7 +13,7 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.cpp
 
 all: $(OBJS)
 	ar rcs $(PROJECT).a $(OBJS)
-	$(CC) $(FLAGS) test.cpp -I$(INCDIR) -L. -lftpp
+	$(CC) $(FLAGS) test.cpp -I$(INCDIR) -L. -lftpp -o $(PROJECT)
 
 clean:
 	rm -rf $(OBJDIR)/*
